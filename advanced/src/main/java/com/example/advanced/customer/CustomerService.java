@@ -3,10 +3,11 @@ package com.example.advanced.customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class CustomerService {
 
     private final CustomerRepo customerRepo;
@@ -18,6 +19,7 @@ public class CustomerService {
     }
 
     List<Customer> getCustomer(){
+
         return customerRepo.getCustomers();
     }
 }
