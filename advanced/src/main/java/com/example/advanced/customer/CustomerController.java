@@ -20,7 +20,7 @@ public class CustomerController {
     List<Customer> getCustomer(){
         return customerService.getCustomer();
     }
-    @PostMapping
+    @PostMapping("/")
     void createNewCustomer(@RequestBody Customer customer){
         System.out.println("Post Request for ");
         System.out.println(customer);
@@ -31,7 +31,7 @@ public class CustomerController {
         System.out.println("Delete Request for customer with ID " + id);
     }
 
-    @PutMapping
+    @PutMapping("/")
     void updateNewCustomer(@RequestBody Customer customer){
         System.out.println("Update Request for ");
         System.out.println(customer);
