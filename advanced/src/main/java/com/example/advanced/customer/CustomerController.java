@@ -2,8 +2,7 @@ package com.example.advanced.customer;
 
 import com.example.advanced.AdvancedApplication;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,4 +20,21 @@ public class CustomerController {
     List<Customer> getCustomer(){
         return customerService.getCustomer();
     }
+    @PostMapping
+    void createNewCustomer(@RequestBody Customer customer){
+        System.out.println("Post Request for ");
+        System.out.println(customer);
+    }
+
+    @DeleteMapping(path = "{customerId}")
+    void deleteCustomer(@PathVariable("customerId") Long id){
+        System.out.println("Delete Request for customer with ID " + id);
+    }
+
+    @PutMapping
+    void updateNewCustomer(@RequestBody Customer customer){
+        System.out.println("Update Request for ");
+        System.out.println(customer);
+    }
+
 }
