@@ -1,6 +1,5 @@
 package com.example.advanced.customer;
 
-import com.example.advanced.AdvancedApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +19,7 @@ public class CustomerController {
 
     @GetMapping(path = "/all")
     List<Customer> getCustomer(){
-        return customerService.getCustomer();
+        return customerService.getCustomers();
     }
     @PostMapping("/")
     void createNewCustomer(@RequestBody Customer customer){
