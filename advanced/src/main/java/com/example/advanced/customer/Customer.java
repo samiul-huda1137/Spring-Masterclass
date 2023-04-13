@@ -8,14 +8,14 @@ import jakarta.validation.constraints.NotBlank;
 public class Customer {
     private final Long id;
 
-    @NotBlank
+    @NotBlank(message = "Name must not be empty")
     private final String name;
 
-    @NotBlank
+    @NotBlank(message = "Password must not be empty")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private final String password;
 
-    @NotBlank
+    @NotBlank(message = "Email must not be empty")
     @Email(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
             message = "Invalid email format")
     private final String email;
