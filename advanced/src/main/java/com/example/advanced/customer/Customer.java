@@ -16,7 +16,8 @@ public class Customer {
     private final String password;
 
     @NotBlank
-    @Email
+    @Email(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+            message = "Invalid email format")
     private final String email;
     Customer(Long id, String name, String password, String email) {
         this.id = id;
