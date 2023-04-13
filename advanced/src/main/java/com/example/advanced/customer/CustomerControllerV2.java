@@ -1,26 +1,28 @@
 package com.example.advanced.customer;
 
-import com.example.advanced.AdvancedApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-@RequestMapping(path = "/api/v1/customer")
+@RequestMapping(path = "/api/v2/customer")
 @RestController
-@Deprecated
-public class CustomerController {
+public class CustomerControllerV2 {
 
     private final CustomerService customerService;
 
     @Autowired
-    public CustomerController(CustomerService customerService) {
+    public CustomerControllerV2(CustomerService customerService) {
         this.customerService = customerService;
     }
 
     @GetMapping(path = "/all")
     List<Customer> getCustomer(){
-        return customerService.getCustomer();
+        return Collections.singletonList(
+                new Customer(0L,"v2 john","v2pass")
+        );
     }
     @PostMapping("/")
     void createNewCustomer(@RequestBody Customer customer){
