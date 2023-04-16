@@ -31,7 +31,7 @@ public class CustomerControllerV2 {
     @GetMapping(path = "/{customerId}/exception")
     Customer getCustomerException(@PathVariable("customerId") Long id){
         throw new ApiRequestException(
-                "ApiRequestException for customer " + id
+                "Api Request Exception for customer " + id
         );
     }
 

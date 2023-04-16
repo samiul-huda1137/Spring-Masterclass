@@ -14,7 +14,7 @@ public class CustomerConfig {
     @Bean
     CommandLineRunner commandLineRunner(){
         return  args ->{
-            System.out.println("Command line runner check");
+            System.out.println("Command line runner check!!");
         };
     }
 

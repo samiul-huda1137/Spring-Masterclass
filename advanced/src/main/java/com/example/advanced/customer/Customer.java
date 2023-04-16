@@ -25,7 +25,7 @@ public class Customer {
 
     @NotBlank(message = "Email must not be empty")
     @Email(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
-            message = "Invalid email format")
+            message = "Invalid email format. Please try again")
     private String email;
     Customer(Long id, String name, String password, String email) {
         this.id = id;
